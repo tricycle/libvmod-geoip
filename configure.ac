@@ -3,12 +3,13 @@ AC_INIT([libvmod-geoip], [trunk], [lampe@hauke-lampe.de], [libvmod-geoip])
 
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR(src/vmod_geoip.vcc)
-AM_CONFIG_HEADER(config.h)
+AC_CONFIG_HEADERS(config.h)
 
 AC_CANONICAL_SYSTEM
 AC_LANG(C)
 
 AM_INIT_AUTOMAKE([foreign])
+
 
 AC_GNU_SOURCE
 AC_PROG_CC
@@ -17,6 +18,8 @@ if test "x$ac_cv_prog_cc_c99" = xno; then
 	AC_MSG_ERROR([Could not find a C99 compatible compiler])
 fi
 AC_PROG_CPP
+
+LT_INIT
 
 AC_PROG_INSTALL
 AC_PROG_LIBTOOL
